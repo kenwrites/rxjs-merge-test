@@ -1,0 +1,15 @@
+<p>
+  merge-test works!
+</p>
+<section *ngIf='have_holy_days'>
+  <ul>
+    <li>day: {{holy_days[0].date}}</li>
+    <li>season: {{holy_days[0].season}}</li>
+    <li>season_week: {{holy_days[0].season_week}}</li>
+    <li>weekday: {{holy_days[0].weekday}}</li>
+    <li>season: {{holy_days[0].season}}</li>
+    <li *ngIf='holy_days[0].celebrations[0]'>celebration 1: {{holy_days[0].celebrations[0].title}}</li>
+    <li *ngIf='holy_days[0].celebrations[1]'>celebration 2: {{holy_days[0].celebrations[1].title}}</li>
+  </ul>
+
+</section>
