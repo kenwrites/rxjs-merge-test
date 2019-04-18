@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { of } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-catcherror-test',
@@ -24,9 +24,12 @@ export class CatcherrorTestComponent implements OnInit {
         }
         return n;
       }),
-      catchError(err => of('error!')),
+      catchError(error => { throw new Error('error in source.  Details: ' + error); })
     )
-      .subscribe(x => console.log(x));
+      .subscribe(
+        x => console.log(x),
+        err => console.error(err)
+    );
   // 1, 2, 3, I, II, III, IV, V
   }
 

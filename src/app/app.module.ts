@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MergeTestComponent } from './merge-test/merge-test.component';
 import { CatcherrorTestComponent } from './catcherror-test/catcherror-test.component';
+import { ReturnOnCompleteComponent } from './return-on-complete/return-on-complete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MergeTestComponent,
-    CatcherrorTestComponent
+    CatcherrorTestComponent,
+    ReturnOnCompleteComponent
   ],
   imports: [
     BrowserModule,
