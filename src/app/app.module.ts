@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MergeTestComponent } from './merge-test/merge-test.component';
+import { CatcherrorTestComponent } from './catcherror-test/catcherror-test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MergeTestComponent
+    MergeTestComponent,
+    CatcherrorTestComponent
   ],
   imports: [
     BrowserModule,

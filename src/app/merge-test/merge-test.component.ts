@@ -3,7 +3,6 @@
 import { Component, OnInit } from '@angular/core';
 import { merge, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { request } from 'http';
 
 // ************************************************************** */
 // Demo from rxjs docs
@@ -53,14 +52,18 @@ export class MergeTestComponent implements OnInit {
   mergeRequests() {
     const today_url = 'http://calapi.inadiutorium.cz/api/v0/en/calendars/general-en/today';
     const tomorrow_url = 'http://calapi.inadiutorium.cz/api/v0/en/calendars/general-en/tomorrow';
+    const day_url = 'http://calapi.inadiutorium.cz/api/v0/en/calendars/general-en/2019/3/4';
     const today_request = this.httpTest(today_url);
     const tomorrow_request = this.httpTest(tomorrow_url);
-    const requests = [today_request, tomorrow_request];
+    const day_request = this.httpTest(day_url);
+    console.dir(day_request);
+    const requests = [today_request, tomorrow_request, day_request];
     let merged_requests = requests[0];
 // tslint:disable-next-line: no-shadowed-variable
     requests.forEach((request, i) => {
       if (i > 0) { merged_requests = merge(merged_requests, request); }
     });
+    console.dir(merged_requests);
     return merged_requests;
   }
 
