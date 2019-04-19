@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { MergeTestComponent } from './merge-test/merge-test.component';
 import { CatcherrorTestComponent } from './catcherror-test/catcherror-test.component';
 import { ReturnOnCompleteComponent } from './return-on-complete/return-on-complete.component';
+import { ZipTestComponent } from './zip-test/zip-test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MergeTestComponent,
     CatcherrorTestComponent,
-    ReturnOnCompleteComponent
+    ReturnOnCompleteComponent,
+    ZipTestComponent
   ],
   imports: [
     BrowserModule,
