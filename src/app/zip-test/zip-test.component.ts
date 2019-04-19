@@ -49,7 +49,10 @@ export class ZipTestComponent implements OnInit {
     const request2 = this.http.get<Day>(url2);
     const request3 = this.http.get<Day>(url3);
     const request_array = [request1, request2, request3];
-    const zipped_requests = zip(request_array);
+    const zipped_requests = zip(...request_array);
+    // const zipped_requests = zip(request1, request2, request3);
+    console.log('zipped requests:');
+    console.dir(zipped_requests);
     return zipped_requests;
   }
 
